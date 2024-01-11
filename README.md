@@ -18,3 +18,8 @@ sudo vim /etc/systemd/system/bugsynth.service
 ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1235", ATTRS{idProduct}=="0123", RUN+="/home/equant/BugSynth/midi_connect.sh"
 ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="1c75", ATTRS{idProduct}=="0218", RUN+="/home/equant/BugSynth/midi_connect.sh"
 ```
+
+```bash
+cp /usr/share/soundfonts/FluidR3_GM.sf2 SquishBox/sf2/
+```
+
