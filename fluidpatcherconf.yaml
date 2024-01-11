@@ -1,20 +1,18 @@
-# config file used by fluidpatcher.pyw
 soundfontdir: SquishBox/sf2
 bankdir: SquishBox/banks
 mfilesdir: SquishBox/midi
 plugindir: /usr/lib/ladspa
-currentbank: bank1.yaml
-
+currentbank: bank2.yaml
 fluidsettings:
   midi.autoconnect: 1
-  audio.alsa.device: "hw:CODEC"
+  audio.alsa.device: hw:CODEC
   player.reset-synth: 0
   synth.ladspa.active: 1
+info: 'The fluidsetting-* nodes below are alternative setups
 
-info: |
-  The fluidsetting-* nodes below are alternative setups
   To use one of them, truncate its name to `fluidsettings`
 
+  '
 fluidsettings-windows-lowlatency:
   audio.driver: wasapi
   audio.wasapi.exclusive-mode: 1
@@ -22,7 +20,6 @@ fluidsettings-windows-lowlatency:
   audio.period-size: 144
   midi.autoconnect: 1
   player.reset-synth: 0
-
 fluidsettings-linux-jack:
   audio.driver: jack
   audio.jack.autoconnect: 1
