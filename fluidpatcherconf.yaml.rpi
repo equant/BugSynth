@@ -5,6 +5,7 @@ plugindir: /usr/lib/ladspa
 currentbank: bank2.yaml
 fluidsettings:
   midi.autoconnect: 1
+  audio.alsa.device: hw:CODEC
   player.reset-synth: 0
   synth.ladspa.active: 1
 info: 'The fluidsetting-* nodes below are alternative setups

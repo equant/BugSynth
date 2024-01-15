@@ -1,88 +1,128 @@
 description: example bank file that demonstrates many of the features of fluidpatcher
   view the wiki at https://github.com/albedozero/fluidpatcher/wiki for detailed info
 
+messages:
+- note:10:56:80
+
 patches:
   Big Trucks:
-    1: CasioMT11.sf2:000:006  # violin
-    2: CasioMT70.sf2:000:006
+    1: CasioMT11-normalized.sf2:000:006  # violin
+    2: CasioMT70-normalized.sf2:000:006
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   Rug:
-    1: CasioMT11.sf2:000:006
-    2: CasioMT70.sf2:000:004
+    1: CasioMT11-normalized.sf2:000:006
+    2: CasioMT70-normalized.sf2:000:004
     10: FluidR3_GM.sf2:128:032  # Jazz kit
+    router_rules:
+      - {type: note, chan: 1, par1: 0-127*1-12}   # everything down an octive
+      - {type: note, chan: 2, par1: 0-127*1-12}   # everything down an octive
   Ceiling:
-    1: CasioMT11.sf2:000:007  # clarinet
-    2: CasioMT70.sf2:000:002  # flute
+    1: CasioMT11-normalized.sf2:000:007  # clarinet
+    2: CasioMT70-normalized.sf2:000:002  # flute
     10: FluidR3_GM.sf2:128:032  # Jazz kit
+    router_rules:
+      - clear
+      - {type: note, chan: 1, par1: 0-127*1-12}   # everything down an octive
+      - {type: note, chan: 2, par1: 0-127*1-12}   # everything down an octive
+      - {type: note, chan: 3=2, par1: 0-127*1-12}   # 2 on Midi channel 3  \
+      - {type: note, chan: 3=1, par1: 0-127*1-12}   # 1 on Midi channel 3  | - Two sounds at once
   Defroster Heart:
-    1: CasioMT11.sf2:000:006  # violin
-    2: CasioMT70.sf2:000:000  # pipe organ
+    1: CasioMT11-normalized.sf2:000:006  # violin
+    2: CasioMT70-normalized.sf2:000:000  # pipe organ
     10: FluidR3_GM.sf2:128:032  # Jazz kit
+    router_rules:
+      - clear
+      - {type: note, chan: 1, par1: 0-127*1-12}   # everything down an octive
+      - {type: note, chan: 2, par1: 0-127*1-12}   # everything down an octive
   Nothere:
-    1: CasioMT11.sf2:000:004  # organ
-    2: CasioMT70.sf2:000:008  # wah brass
+    1: CasioMT11-normalized.sf2:000:004  # organ
+    2: CasioMT70-normalized.sf2:000:008  # wah brass
     10: FluidR3_GM.sf2:128:032  # Jazz kit
+    router_rules:
+      - {type: note, chan: 3=2}   # 2 on Midi channel 3  \
+      - {type: note, chan: 3=1}   # 1 on Midi channel 3  | - Two sounds at once
   Hearts on Fire:
-    1: CasioMT11.sf2:000:002  # harp
-    2: CasioMT70.sf2:000:006  # chorus
+    1: CasioMT11-normalized.sf2:000:002  # harp
+    2: CasioMT70-normalized.sf2:000:006  # chorus
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   Self Adhesive:
-    1: CasioMT11.sf2:000:006  # violin
-    2: CasioMT70.sf2:000:007  # synth. brass
+    1: CasioMT11-normalized.sf2:000:006  # violin
+    2: CasioMT70-normalized.sf2:000:007  # synth. brass
     10: FluidR3_GM.sf2:128:032  # Jazz kit
+    messages:
+      - cc:2:11:90
+    router_rules:
+      - {type: note, chan: 1, par1: 0-127*1-12}   # everything down an octive
+      - {type: note, chan: 2, par1: 0-127*1-12}   # everything down an octive
   Zip Lock:
-    1: CasioMT11.sf2:000:002  # harp
-    2: CasioMT70.sf2:000:005  # jazz organ 2
+    1: CasioMT11-normalized.sf2:000:002  # harp
+    2: CasioMT70-normalized.sf2:000:011  # jazz organ 2 no sus
+    3: CasioMT11-normalized.sf2:000:005  # accordion
     10: FluidR3_GM.sf2:128:032  # Jazz kit
+    router_rules:
+      - clear
+      - {type: note, chan: 1, par1: 0-127*1-12}   # everything down an octive
+      - {type: note, chan: 2, par1: 0-127*1-24}   # everything down two octive
+      - {type: note, chan: 3, par1: 0-127*1-12}   # everything down an octive
   Color TV:
-    1: CasioMT11.sf2:000:004  # organ
-    2: CasioMT70.sf2:000:009  # synth. bells
+    1: CasioMT11-normalized.sf2:000:004  # organ
+    2: CasioMT70-normalized.sf2:000:009  # synth. bells
     10: FluidR3_GM.sf2:128:032  # Jazz kit
+    router_rules:
+      - {type: note, chan: 1, par1: 0-127*1-12}   # everything down an octive
   Access Road to Heck:
-    1: CasioMT11.sf2:000:006  # violin
+    1: CasioMT11-normalized.sf2:000:006  # violin
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Name Drop:
+    1: CasioMT11-normalized.sf2:000:004  # organ
+    2: CasioMT70-normalized.sf2:000:009  # synth. bells
+    10: FluidR3_GM.sf2:128:032  # Jazz kit
+  Sucks:
+    1: FluidR3_GM.sf2:000:089 # Warm Pad:
+    2: CasioMT70-normalized.sf2:000:009  # synth. bells
     10: FluidR3_GM.sf2:128:032  # Jazz kit
   pipe organ:
-    1: CasioMT70.sf2:000:000
+    1: CasioMT70-normalized.sf2:000:000
   wood wind:
-    1: CasioMT70.sf2:000:001
+    1: CasioMT70-normalized.sf2:000:001
   flute:
-    1: CasioMT70.sf2:000:002
+    1: CasioMT70-normalized.sf2:000:002
   piano:
-    1: CasioMT70.sf2:000:003
+    1: CasioMT70-normalized.sf2:000:003
   vibraphone:
-    1: CasioMT70.sf2:000:004
+    1: CasioMT70-normalized.sf2:000:004
   jazz organ 2:
-    1: CasioMT70.sf2:000:005
+    1: CasioMT70-normalized.sf2:000:005
   chorus:
-    1: CasioMT70.sf2:000:006
+    1: CasioMT70-normalized.sf2:000:006
   synth. brass:
-    1: CasioMT70.sf2:000:007
+    1: CasioMT70-normalized.sf2:000:007
   wah brass:
-    1: CasioMT70.sf2:000:008
+    1: CasioMT70-normalized.sf2:000:008
   synth. bells:
-    1: CasioMT70.sf2:000:009
+    1: CasioMT70-normalized.sf2:000:009
   samples:
-    1: CasioMT70.sf2:000:010
+    1: CasioMT70-normalized.sf2:000:010
     messages:
     - cc:1:120:0 # All Sound Off
     - cc:1:121:0 # Reset All Controllers
       #- cc:1:64:127 # Sustain on.
   piano:
-    1: CasioMT11.sf2:000:000
+    1: CasioMT11-normalized.sf2:000:000
   electric piano:
-    1: CasioMT11.sf2:000:001
+    1: CasioMT11-normalized.sf2:000:001
   harp:
-    1: CasioMT11.sf2:000:002
+    1: CasioMT11-normalized.sf2:000:002
   pipe organ:
-    1: CasioMT11.sf2:000:003
+    1: CasioMT11-normalized.sf2:000:003
   organ:
-    1: CasioMT11.sf2:000:004
+    1: CasioMT11-normalized.sf2:000:004
   accordion:
-    1: CasioMT11.sf2:000:005
+    1: CasioMT11-normalized.sf2:000:005
   violin:
-    1: CasioMT11.sf2:000:006
+    1: CasioMT11-normalized.sf2:000:006
   clarinet:
-    1: CasioMT11.sf2:000:007
+    1: CasioMT11-normalized.sf2:000:007
 
 init:
   fluidsettings:
