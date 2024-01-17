@@ -1,6 +1,8 @@
 SquishBox/sf2/FluidR3_GM.sf2
 *.sf2
 
+*.swp
+
 # windows installer assets
 fluidsynth_win*/
 bundled/
