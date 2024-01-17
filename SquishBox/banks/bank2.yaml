@@ -14,8 +14,9 @@ patches:
     2: CasioMT70-normalized.sf2:000:004
     10: FluidR3_GM.sf2:128:032  # Jazz kit
     router_rules:
+      - clear
       - {type: note, chan: 1, par1: 0-127*1-12}   # everything down an octive
-      - {type: note, chan: 2, par1: 0-127*1-12}   # everything down an octive
+      - {type: note, chan: 2, par1: 0-127*1-24}   # everything two octives
   Ceiling:
     1: CasioMT11-normalized.sf2:000:007  # clarinet
     2: CasioMT70-normalized.sf2:000:002  # flute
@@ -39,6 +40,7 @@ patches:
     2: CasioMT70-normalized.sf2:000:008  # wah brass
     10: FluidR3_GM.sf2:128:032  # Jazz kit
     router_rules:
+      - clear
       - {type: note, chan: 3=2}   # 2 on Midi channel 3  \
       - {type: note, chan: 3=1}   # 1 on Midi channel 3  | - Two sounds at once
   Hearts on Fire:
@@ -52,6 +54,7 @@ patches:
     messages:
       - cc:2:11:90
     router_rules:
+      - clear
       - {type: note, chan: 1, par1: 0-127*1-12}   # everything down an octive
       - {type: note, chan: 2, par1: 0-127*1-12}   # everything down an octive
   Zip Lock:
